@@ -16,7 +16,7 @@ const Classes = () => {
     const handelSubmit = async (e) => {
 
         e.preventDefault()
-        const res = await axios.post('http://localhost:5000/api/v1/addcourse', course)
+        const res = await axios.post('https://erp-woad.vercel.app/api/v1/addcourse', course)
         if (res.data.success) {
             toast.success(res.data.message)
         }
@@ -25,7 +25,7 @@ const Classes = () => {
     }
 
     const loadingCourse = async () => {
-        const res = await axios.get('http://localhost:5000/api/v1/addcourse')
+        const res = await axios.get('https://erp-woad.vercel.app/api/v1/addcourse')
         setClasses(res.data.courselist);
     }
     console.log(classes)
